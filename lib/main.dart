@@ -29,15 +29,6 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
   final String title;
 
   @override
@@ -51,7 +42,101 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       //CustomBar is made to change the default app bar according to my choice
       appBar: CustomAppBar(),
-      body: UserCard(user: User.users[0]),
+      body: Column(
+        children: [
+          UserCard(user: User.users[0]),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+                vertical: 8.0,
+                horizontal: 60,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                ChoiceButton(
+                  width: 60,
+                  height: 60,
+                  size: 25,
+                  hasGradient: false,
+                  color: Colors.redAccent,
+                  icon: Icons.clear_rounded,
+                ),
+                ChoiceButton(
+                  width: 80,
+                  height: 80,
+                  size: 30,
+                  hasGradient: true,
+                  color: Colors.white,
+                  icon: Icons.favorite,
+                ),
+                ChoiceButton(
+                  width: 60,
+                  height: 60,
+                  size: 25,
+                  hasGradient: false,
+                  color: Colors.black,
+                  icon: Icons.watch_later,
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class ChoiceButton extends StatelessWidget {
+  final double width;
+  final double height;
+  final double size;
+  final Color color;
+  final bool hasGradient;
+  final IconData icon;
+
+  const ChoiceButton({Key? key,
+    required this.width,
+    required this.height,
+    required this.size,
+    required this.color,
+    required this.hasGradient,
+    required this.icon,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: width,
+      height: height,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: Colors.white,
+        gradient: hasGradient
+            ? LinearGradient(colors: [
+                //Colors.black,
+                Colors.blueAccent,
+                Colors.redAccent
+              ],
+            )
+          : LinearGradient(colors: [
+              Colors.white,
+              Colors.white,
+              ],
+            ),
+        boxShadow: [
+          BoxShadow(
+              color: Colors.grey.withAlpha(50),
+              spreadRadius: 4,
+              blurRadius: 4,
+              offset: Offset(3,3),
+          ),
+        ]
+      ),
+      child: Icon(
+          icon,
+          color: color,
+        size: size,
+      ),
     );
   }
 }
