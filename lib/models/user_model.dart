@@ -10,14 +10,18 @@ class User extends Equatable {
   final int id;
   final String name;
   final int age;
-  final List<String> imageUrls;
+  //final String gender;
+  final List<dynamic> imageUrls;
+  final List<dynamic> interests;
   final String bio;
   final String jobTitle;
+  //final String location;
 
   const User({
     required this.id,
     required this.name,
     required this.age,
+    required this.interests,
     required this.imageUrls,
     required this.bio,
     required this.jobTitle
@@ -28,6 +32,7 @@ class User extends Equatable {
     id,
     name,
     age,
+    interests,
     imageUrls,
     bio,
     jobTitle,
@@ -45,9 +50,11 @@ class User extends Equatable {
         'https://images.unsplash.com/photo-1542295669297-4d352b042bca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
         'https://images.unsplash.com/photo-1542295669297-4d352b042bca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
       ],
-      jobTitle: 'Student',
+      jobTitle: 'Job Title Here',
+      interests: ['Music', 'Economics', 'Football'],
       bio:
-      'I am a happy lady',
+      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
+      //location: 'Milan',
     ),
     const User(
       id: 2,
@@ -61,6 +68,7 @@ class User extends Equatable {
         'https://images.unsplash.com/photo-1610130383669-95917c70ca20?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
       ],
       jobTitle: 'Artist',
+      interests: ['Music', 'Economics', 'Football'],
       bio:
       'I am a happy active lady',
     ),
@@ -76,6 +84,7 @@ class User extends Equatable {
         'https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
       ],
       jobTitle: 'Salesperson',
+      interests: ['Music', 'Economics', 'Football'],
       bio:
       'I am a happy active lady',
     ),
@@ -91,6 +100,7 @@ class User extends Equatable {
         'https://images.unsplash.com/photo-1627156096030-861f04ff550e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80',
       ],
       jobTitle: 'Housewife',
+      interests: ['Music', 'Economics', 'Football'],
       bio:
       'I am a happy active lady',
     ),
@@ -106,6 +116,7 @@ class User extends Equatable {
         'https://images.unsplash.com/photo-1621784563286-84f7646ef221?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
       ],
       jobTitle: 'Bartender',
+      interests: ['Music', 'Economics', 'Football'],
       bio:
       'Looking for some fun!',
     ),
@@ -121,6 +132,7 @@ class User extends Equatable {
         'https://images.unsplash.com/photo-1539698103494-a76dd0436fbc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
       ],
       jobTitle: 'Singer',
+      interests: ['Music', 'Economics', 'Football'],
       bio:
       'Not the Lisa from BlackPink',
     ),
@@ -136,6 +148,7 @@ class User extends Equatable {
         'https://images.unsplash.com/photo-1552457499-7e1eed6893f6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80',
       ],
       jobTitle: 'Model',
+      interests: ['Music', 'Politics', 'Hiking'],
       bio:
       'A girl trying to live her best life.',
     ),
