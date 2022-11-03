@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jling_fling_dating/models/user_model.dart';
+import 'package:jling_fling_dating/onboarding/onboarding_screen.dart';
 import 'package:jling_fling_dating/screens/home_screen.dart';
 import 'package:jling_fling_dating/screens/user_screen.dart';
 
@@ -17,6 +18,8 @@ class AppRouter {
         return HomeScreen.route();
       case UsersScreen.routeName:
         return UsersScreen.route(user: settings.arguments as User);
+      case OnboardingScreen.routeName:
+        return OnboardingScreen.route();
       default:
         return _errorRoute();
     }

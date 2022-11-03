@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       //CustomBar is made to change the default app bar according to my choice
-      appBar: CustomAppBar(),
+      appBar: CustomAppBar(title: 'DISCOVER'),
       body: BlocBuilder<SwipeBloc, SwipeState>(
           builder: (context, state) {
             if(state is SwipeLoading){
@@ -35,8 +35,11 @@ class HomeScreen extends StatelessWidget {
                 //Draggable is used for swiping the pictures left or right
                 InkWell(
                   onDoubleTap: (){
-                    Navigator.pushNamed(context, '/users',
-                        arguments: state.users[0]);
+                    //I had to modified pushnamed because it was not working for me. Push is less complicated than pushnamed.
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) =>  UsersScreen(user: state.users[0]))
+                    );
                   },
                   child: Draggable(
                     child: UserCard(user: state.users[0]),

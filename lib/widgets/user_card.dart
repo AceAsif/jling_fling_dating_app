@@ -25,6 +25,7 @@ class UserCard extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           child: Stack(children: [
             Container(
+              //This is for user picture card design setting
               decoration: BoxDecoration(
                   image: DecorationImage(
                     fit: BoxFit.cover,
@@ -42,6 +43,7 @@ class UserCard extends StatelessWidget {
               ),
             ),
             Container(
+              //This is for user picture card design setting
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5.0),
                 gradient: LinearGradient(colors: [

@@ -8,7 +8,6 @@ import '../models/user_model.dart';
 
 class SwipeBloc extends Bloc<SwipeEvent, SwipeState>{
 
-  //SwipeBloc() : super(SwipeLoading());
   SwipeBloc()  : super(SwipeLoading()) {
     on<LoadUsers>(_onLoadUsers);
     on<UpdateHome>(_onUpdateHome);

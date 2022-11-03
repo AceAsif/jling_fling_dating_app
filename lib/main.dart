@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:jling_fling_dating/blocs_swipe/swipe_event.dart';
 import 'package:jling_fling_dating/config/app_router.dart';
 import 'package:jling_fling_dating/config/theme.dart';
-import 'package:jling_fling_dating/screens/home_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jling_fling_dating/blocs_swipe/swipe_bloc.dart';
+import 'package:jling_fling_dating/onboarding/onboarding_screen.dart';
+import 'package:jling_fling_dating/screens/home_screen.dart';
+import 'package:jling_fling_dating/screens/user_screen.dart';
 
 import 'models/user_model.dart';
 
@@ -34,8 +36,10 @@ class MyApp extends StatelessWidget {
             //home: const MyHomePage(title: 'Dating App Home Page'),
             //onGenerateInitialRoutes: AppRouter.onGenerateRoute,
             //initialRoute: HomeScreen.routeName,
+            //initialRoute: UsersScreen(user: User.users[0]),
             //home: UsersScreen(user: User.users[0]),
-            home: HomeScreen(),
+            //home: HomeScreen(),
+            home: OnboardingScreen(),
         )
     );
   }

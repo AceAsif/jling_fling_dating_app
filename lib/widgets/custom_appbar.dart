@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
+  final String title;
+  final bool hasActions;
+
   const CustomAppBar({
     Key? key,
+    required this.title,
+    this.hasActions = true,
   }) : super(key: key);
 
   @override
@@ -21,16 +26,18 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
           Expanded(
               flex: 2,
               child: Text(
-                'Discover',
+                title,
                 style: Theme.of(context).textTheme.headline4,
               )
           )
         ],
       ),
-      actions: [
-        IconButton(icon: const Icon(Icons.message), color: Colors.black, onPressed: () {}),
-        IconButton(icon: const Icon(Icons.person), color: Colors.black, onPressed: () {})
-      ],
+      actions: hasActions
+          ? [
+              IconButton(icon: const Icon(Icons.message), color: Colors.black, onPressed: () {}),
+              IconButton(icon: const Icon(Icons.person), color: Colors.black, onPressed: () {})
+            ]
+          : null,
     );
   }
 
