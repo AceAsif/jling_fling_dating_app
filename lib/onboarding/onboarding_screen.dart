@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:jling_fling_dating/onboarding/onboarding_screens/email_verification_screen.dart';
 import 'package:jling_fling_dating/onboarding/onboarding_screens/start_screen.dart';
 import 'package:jling_fling_dating/widgets/custom_appbar.dart';
+
+import 'onboarding_screens/email_screen.dart';
 
 
 class OnboardingScreen extends StatelessWidget {
@@ -15,7 +18,8 @@ class OnboardingScreen extends StatelessWidget {
 
   static const List<Tab> tabs = <Tab>[
     Tab(text: 'Start'),
-    //Tab(text: 'Email'),
+    Tab(text: 'Email'),
+    Tab(text: 'Email Verification'),
     //Tab(text: 'Demographics'),
     //Tab(text: 'Pictures'),
     //Tab(text: 'Biography'),
@@ -39,7 +43,8 @@ class OnboardingScreen extends StatelessWidget {
           body: TabBarView(
             children: [
               Start(tabController: tabController),
-              //Email(tabController: tabController),
+              Email(tabController: tabController),
+              EmailVerification(tabController: tabController),
               //Demo(tabController: tabController),
               //Pictures(tabController: tabController),
               //Bio(tabController: tabController),

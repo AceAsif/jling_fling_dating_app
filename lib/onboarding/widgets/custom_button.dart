@@ -9,7 +9,7 @@ class CustomButton extends StatelessWidget {
   const CustomButton({
     Key? key,
     required this.tabController,
-    required this.text,
+    this.text = 'START',
     this.function,
   }) : super(key: key);
 
@@ -31,7 +31,9 @@ class CustomButton extends StatelessWidget {
           primary: Colors.transparent,
           elevation: 0,
         ),
-        onPressed: () {},
+        onPressed: () {
+          tabController.animateTo(tabController.index + 1);
+        },
         child: Container(
           width: double.infinity,
           child: Center(
