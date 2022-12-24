@@ -1,6 +1,6 @@
 # jling_fling_dating
 
-It is a dating app
+It is a dating app. So far I have completed the Onboarding screen except for the location screen.
 
 ## Getting Started
 
