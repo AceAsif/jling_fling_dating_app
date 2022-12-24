@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jling_fling_dating/onboarding/widgets/custom_button.dart';
 import 'package:jling_fling_dating/onboarding/widgets/custom_text_field.dart';
 import 'package:jling_fling_dating/onboarding/widgets/custom_text_header.dart';
+import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 
 class EmailVerification extends StatelessWidget {
@@ -30,7 +31,18 @@ class EmailVerification extends StatelessWidget {
               text: 'ENTER YOUR CODE',),
           ],
         ),
-        CustomButton(tabController: tabController, text: 'NEXT STEP')
+        Column(
+          children: [
+            StepProgressIndicator(
+              totalSteps: 6,
+              currentStep: 2,
+              selectedColor: Theme.of(context).primaryColor,
+              unselectedColor: Theme.of(context).backgroundColor,
+            ),
+            SizedBox(height: 10,),
+            CustomButton(tabController: tabController, text: 'NEXT STEP'),
+          ],
+        ),
       ],
     ),
     );

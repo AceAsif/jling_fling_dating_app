@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jling_fling_dating/onboarding/widgets/custom_button.dart';
 import 'package:jling_fling_dating/onboarding/widgets/widget.dart';
+import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 
 class Email extends StatelessWidget {
@@ -27,7 +28,19 @@ class Email extends StatelessWidget {
               CustomTextField(tabController: tabController, text: 'ENTER YOUR EMAIL',),
             ],
           ),
-          CustomButton(tabController: tabController, text: 'NEXT STEP')
+
+          Column(
+            children: [
+              StepProgressIndicator(
+                totalSteps: 6,
+                currentStep: 1,
+                selectedColor: Theme.of(context).primaryColor,
+                unselectedColor: Theme.of(context).backgroundColor,
+              ),
+              SizedBox(height: 10,),
+              CustomButton(tabController: tabController, text: 'NEXT STEP'),
+            ],
+          ),
         ],
       ),
     );
