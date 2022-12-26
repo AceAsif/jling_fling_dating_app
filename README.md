@@ -1,7 +1,7 @@
 # jling_fling_dating
 
 It is a dating app. So far I have completed the Onboarding screen except for the location screen. 
-[27/12/2022] I finished making the chat model, message modal, user_match modal. 
+- [27/12/2022] I finished making the chat model, message modal, user_match modal. 
 
 ## Getting Started
 
